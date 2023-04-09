@@ -1,8 +1,8 @@
-package com.raysun.composex;
+package window;
 
 import javax.swing.*;
 
-public class ComposeGenerateDialog {
+public class ComposeGenerateDialog extends JDialog {
     private JPanel wholeJPanel;
     private JPanel selectLabel;
     private JRadioButton DefaultMode;
@@ -18,6 +18,9 @@ public class ComposeGenerateDialog {
     private JButton confirmButton;
 
     public ComposeGenerateDialog() {
+        setContentPane(wholeJPanel);
+        setModal(true);
+
         // 确认
         confirmButton.addActionListener(e -> {
 
@@ -37,5 +40,9 @@ public class ComposeGenerateDialog {
         EasyMode.addActionListener(e -> {
 
         });
+    }
+
+    public void setWholeJPanel(JPanel wholeJPanel) {
+        this.wholeJPanel = wholeJPanel;
     }
 }

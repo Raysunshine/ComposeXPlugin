@@ -28,7 +28,7 @@
 
     </extensions>
     <actions>
-        <action id="ComposeXID" class="com.raysun.composex.ComposeX" text="ComposeX"
+        <action id="ComposeXID" class="compose.ComposeX" text="ComposeX"
                 description="Create some useful files for jetpack compose">
             <add-to-group group-id="NewGroup" anchor="after" relative-to-action="Android.CreateSampleDataDirectory"/>
         </action>

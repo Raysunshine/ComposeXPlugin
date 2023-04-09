@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.raysun.composex.ComposeGenerateDialog">
-  <grid id="27dc6" binding="wholeJPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="window.ComposeGenerateDialog">
+  <grid id="27dc6" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
     <constraints>
       <xy x="3" y="20" width="1160" height="447"/>
     </constraints>
@@ -29,7 +29,7 @@
           <font/>
         </border>
         <children>
-          <component id="87ba0" class="javax.swing.JRadioButton" binding="DefaultMode" custom-create="true">
+          <component id="87ba0" class="javax.swing.JRadioButton" binding="DefaultMode">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false" defaultalign-vert="false"/>
