@@ -45,7 +45,6 @@ class ComposeX : AnAction() {
         composeName: String
     ) {
         var targetDirectoryPath = parentDirectory
-        val packageName = targetDirectoryPath.replace("/", ".").substringAfter("java.")
         val composeRoute = composeName.lowercase()
         if (useFolder) {//创建文件夹
             targetDirectoryPath = "$parentDirectory/$composeRoute"
@@ -53,6 +52,7 @@ class ComposeX : AnAction() {
                 File(targetDirectoryPath).mkdirs()
             }
         }
+        val packageName = targetDirectoryPath.replace("/", ".").substringAfter("java.")
         if (useDirections) {
             val inputStream = this.javaClass.getResourceAsStream("/template/ScreenDirections.txt")
             val directionsContent = inputStream?.readBytes()?.toString(Charset.defaultCharset())
