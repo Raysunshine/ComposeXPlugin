@@ -29,7 +29,7 @@
           <font/>
         </border>
         <children>
-          <component id="87ba0" class="javax.swing.JRadioButton" binding="DefaultMode">
+          <component id="87ba0" class="javax.swing.JRadioButton" binding="defaultMode">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false" defaultalign-vert="false"/>
@@ -45,7 +45,7 @@
               <verticalAlignment value="1"/>
             </properties>
           </component>
-          <component id="ff365" class="javax.swing.JRadioButton" binding="EasyMode">
+          <component id="ff365" class="javax.swing.JRadioButton" binding="easyMode">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
@@ -71,7 +71,7 @@
         </properties>
         <border type="none" title="Select Function"/>
         <children>
-          <component id="8eb43" class="javax.swing.JCheckBox" binding="folder">
+          <component id="8eb43" class="javax.swing.JCheckBox" binding="useFolder">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -80,7 +80,7 @@
               <text value="useFolder"/>
             </properties>
           </component>
-          <component id="a9f81" class="javax.swing.JCheckBox" binding="useScreenCheckBox" default-binding="true">
+          <component id="a9f81" class="javax.swing.JCheckBox" binding="useScreen">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -89,7 +89,7 @@
               <text value="useScreen"/>
             </properties>
           </component>
-          <component id="b5bce" class="javax.swing.JCheckBox" binding="useDirectionsCheckBox" default-binding="true">
+          <component id="b5bce" class="javax.swing.JCheckBox" binding="useDirections">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="97" height="23"/>
@@ -100,7 +100,7 @@
               <text value="useDirections"/>
             </properties>
           </component>
-          <component id="10fab" class="javax.swing.JCheckBox" binding="useViewModelCheckBox" default-binding="true">
+          <component id="10fab" class="javax.swing.JCheckBox" binding="useViewModel">
             <constraints>
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -122,7 +122,7 @@
         </properties>
         <border type="none" title="Compose Screen Name"/>
         <children>
-          <component id="5ffc" class="javax.swing.JFormattedTextField" binding="formattedTextField1" default-binding="true">
+          <component id="5ffc" class="javax.swing.JFormattedTextField" binding="composeName">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -137,7 +137,7 @@
           </component>
         </children>
       </grid>
-      <grid id="3d4ca" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="3d4ca" binding="BottomButtons" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
         <constraints/>
         <properties>
           <maximumSize width="380" height="40"/>

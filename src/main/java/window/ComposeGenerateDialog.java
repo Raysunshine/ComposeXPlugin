@@ -5,44 +5,49 @@ import javax.swing.*;
 public class ComposeGenerateDialog extends JDialog {
     private JPanel wholeJPanel;
     private JPanel selectLabel;
-    private JRadioButton DefaultMode;
-    private JRadioButton EasyMode;
-    private JFormattedTextField formattedTextField1;
+    private JRadioButton defaultMode;
+    private JRadioButton easyMode;
+    private JFormattedTextField composeName;
     private JPanel FunctionLabel;
     private JPanel ComposeScreenLabel;
-    private JCheckBox folder;
-    private JCheckBox useScreenCheckBox;
-    private JCheckBox useDirectionsCheckBox;
-    private JCheckBox useViewModelCheckBox;
+    private JCheckBox useFolder;
+    private JCheckBox useScreen;
+    private JCheckBox useDirections;
+    private JCheckBox useViewModel;
     private JButton cancelButton;
     private JButton confirmButton;
+    private JPanel BottomButtons;
 
     public ComposeGenerateDialog() {
+        setTitle("ComposeX Template Code Produce");
         setContentPane(wholeJPanel);
         setModal(true);
 
         // 确认
         confirmButton.addActionListener(e -> {
-
+            boolean defaultMode = this.defaultMode.isSelected();
+            boolean easyMode = this.easyMode.isSelected();
+            boolean useFolder = this.useFolder.isSelected();
+            boolean useDirections = this.useDirections.isSelected();
+            boolean useScreen = this.useScreen.isSelected();
+            boolean useViewModel = this.useViewModel.isSelected();
+            String composeName = this.composeName.getText();
+            dispose();
         });
 
         //取消
         cancelButton.addActionListener(e -> {
-
+            dispose();
         });
 
-        //DefaultMode
-        DefaultMode.addActionListener(e -> {
-
+        //defaultMode
+        defaultMode.addActionListener(e -> {
+            easyMode.setSelected(false);
         });
 
-        //EasyMode
-        EasyMode.addActionListener(e -> {
-
+        //easyMode
+        easyMode.addActionListener(e -> {
+            defaultMode.setSelected(false);
         });
-    }
-
-    public void setWholeJPanel(JPanel wholeJPanel) {
-        this.wholeJPanel = wholeJPanel;
     }
 }
