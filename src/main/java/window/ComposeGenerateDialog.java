@@ -1,6 +1,9 @@
 package window;
 
+import com.intellij.openapi.ui.Messages;
+
 import javax.swing.*;
+import java.util.Objects;
 
 public class ComposeGenerateDialog extends JDialog {
     private JPanel wholeJPanel;
@@ -18,6 +21,8 @@ public class ComposeGenerateDialog extends JDialog {
     private JButton confirmButton;
     private JPanel BottomButtons;
 
+    private onClickListener onClickListener;
+
     public ComposeGenerateDialog() {
         setTitle("ComposeX Template Code Produce");
         setContentPane(wholeJPanel);
@@ -32,22 +37,29 @@ public class ComposeGenerateDialog extends JDialog {
             boolean useScreen = this.useScreen.isSelected();
             boolean useViewModel = this.useViewModel.isSelected();
             String composeName = this.composeName.getText();
+            if (Objects.equals(composeName, "")) {
+                Messages.showInfoMessage("Please input ComposeScreenName", "ComposeX");
+                return;
+            }
+            onClickListener.onClick(defaultMode, easyMode, useFolder, useDirections, useScreen, useViewModel, composeName);
             dispose();
         });
 
         //取消
-        cancelButton.addActionListener(e -> {
-            dispose();
-        });
+        cancelButton.addActionListener(e -> dispose());
 
         //defaultMode
-        defaultMode.addActionListener(e -> {
-            easyMode.setSelected(false);
-        });
+        defaultMode.addActionListener(e -> easyMode.setSelected(false));
 
         //easyMode
-        easyMode.addActionListener(e -> {
-            defaultMode.setSelected(false);
-        });
+        easyMode.addActionListener(e -> defaultMode.setSelected(false));
+    }
+
+    public void setOnClickListener(onClickListener onClickListener) {
+        this.onClickListener = onClickListener;
+    }
+
+    public interface onClickListener {
+        void onClick(boolean defaultMode, boolean easyMode, boolean useFolder, boolean useDirections, boolean useScreen, boolean useViewModel, String composeName);
     }
 }

@@ -1,0 +1,38 @@
+package ${PACKAGE_NAME}
+
+import androidx.navigation.NamedNavArgument
+import androidx.navigation.NavBackStackEntry
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
+
+class ${Compose}ScreenDirections {
+
+    data class ${Compose}ScreenArgs(
+        val example: String,
+    )
+
+    companion object {
+        const val route = "${Route}?example={example}"
+
+        val argumentsList: MutableList<NamedNavArgument>
+            get() = mutableListOf(
+                navArgument("example") {
+                    type = NavType.StringType
+                    defaultValue = "email is empty"
+                    nullable = true
+                },
+            )
+
+        fun parseArguments(backStackEntry: NavBackStackEntry): ${Compose}ScreenArgs {
+            return ${Compose}ScreenArgs(
+                example = backStackEntry.arguments?.getString("example") ?: "",
+            )
+        }
+
+        fun actionExampleScreenTo${Compose}Screen(example: String): String {
+            return "${Route}?example=\${example}}"
+        }
+
+    }
+    
+}
