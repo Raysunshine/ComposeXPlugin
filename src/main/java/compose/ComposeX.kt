@@ -65,6 +65,7 @@ class ComposeX : AnAction() {
                     directionsFile.createNewFile()
                     directionsFile.writeText(newContent)
                 }
+                inputStream.close()
             }
         }
         if (useScreen) {
@@ -79,6 +80,7 @@ class ComposeX : AnAction() {
                     screenFile.createNewFile()
                     screenFile.writeText(newContent)
                 }
+                inputStream.close()
             }
         }
         if (useViewModel) {
@@ -93,6 +95,7 @@ class ComposeX : AnAction() {
                     viewModelFile.createNewFile()
                     viewModelFile.writeText(newContent)
                 }
+                inputStream.close()
             }
         }
     }
