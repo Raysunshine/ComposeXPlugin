@@ -14,13 +14,17 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Android Jetpack compose.<br>
-    <em>Generate some useful files</em>
+    <b>For Android Jetpack compose.</b><br>
+    Generate some useful files
   ]]></description>
 
-    <change-notes>
-
-    </change-notes>
+    <change-notes><![CDATA[
+    <b>ComposeX 1.0.0</b><br>
+    1、Support to generate Directory<br>
+    2、Support to generate Directions<br>
+    3、Support to generate Screen<br>
+    4、Support to generate ViewModel<br>
+  ]]></change-notes>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
