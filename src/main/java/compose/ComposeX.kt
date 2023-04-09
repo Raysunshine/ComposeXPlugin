@@ -45,8 +45,9 @@ class ComposeX : AnAction() {
         composeName: String
     ) {
         var targetDirectoryPath = parentDirectory
+        val packageName = targetDirectoryPath.replace("/", ".").substringAfter("java.")
+        val composeRoute = composeName.lowercase()
         if (useFolder) {//创建文件夹
-            val composeRoute = composeName.lowercase()
             targetDirectoryPath = "$parentDirectory/$composeRoute"
             if (!File(targetDirectoryPath).exists()) {
                 File(targetDirectoryPath).mkdirs()
@@ -57,7 +58,8 @@ class ComposeX : AnAction() {
             val directionsContent = inputStream?.readBytes()?.toString(Charset.defaultCharset())
             directionsContent?.let { content ->
                 val newContent =
-                    content.replace("\${Compose}", composeName).replace("\${PACKAGE_NAME}", targetDirectoryPath)
+                    content.replace("\${Compose}", composeName).replace("\${Route}", composeRoute)
+                        .replace("\${PACKAGE_NAME}", packageName)
                 val directionsFile = File("$targetDirectoryPath/${composeName}ScreenDirections.kt")
                 if (!directionsFile.exists()) {
                     directionsFile.createNewFile()
@@ -70,7 +72,8 @@ class ComposeX : AnAction() {
             val screenContent = inputStream?.readBytes()?.toString(Charset.defaultCharset())
             screenContent?.let { content ->
                 val newContent =
-                    content.replace("\${Compose}", composeName).replace("\${PACKAGE_NAME}", targetDirectoryPath)
+                    content.replace("\${Compose}", composeName).replace("\${Route}", composeRoute)
+                        .replace("\${PACKAGE_NAME}", packageName)
                 val screenFile = File("$targetDirectoryPath/${composeName}Screen.kt")
                 if (!screenFile.exists()) {
                     screenFile.createNewFile()
@@ -83,7 +86,8 @@ class ComposeX : AnAction() {
             val viewModelContent = inputStream?.readBytes()?.toString(Charset.defaultCharset())
             viewModelContent?.let { content ->
                 val newContent =
-                    content.replace("\${Compose}", composeName).replace("\${PACKAGE_NAME}", targetDirectoryPath)
+                    content.replace("\${Compose}", composeName).replace("\${Route}", composeRoute)
+                        .replace("\${PACKAGE_NAME}", packageName)
                 val viewModelFile = File("$targetDirectoryPath/${composeName}ScreenViewModel.kt")
                 if (!viewModelFile.exists()) {
                     viewModelFile.createNewFile()
